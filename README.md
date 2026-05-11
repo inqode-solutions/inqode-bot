@@ -1,30 +1,38 @@
 # inqode-bot
-The AI-Powered version control companion
 
----
+inqode-bot is an AI-powered assistant that integrates into your development workflow on GitHub and GitLab. It helps with code review, code contribution, and automated fixes, acting as an active team member. The bot can review your merge requests and pull requests, contribute code to resolve issues, and fix problems like failing pipelines — all by being assigned to the relevant items.
 
-## Usage Instructions
-
-inqode-bot is designed to be incorporated into your projects like any other active contributor. Simply interact with it through standard GitHub/GitLab workflows, and it will respond accordingly.
+> **Note:** inqode-bot is designed to be incorporated into your projects like any other active contributor. Simply interact with it through standard GitHub/GitLab workflows, and it will respond accordingly.
 
 > **Disclaimer:** The bot is limited to the capabilities of the underlying LLM. It may need a little bit more context than an experienced human contributor, especially when dealing with complex or domain-specific codebases. Feel free to provide additional details in comments or issue descriptions to help it produce better results.
 
-### 1. Setup
+## Setup
 
-Invite the user **@inqode-bot** to your repository and wait for confirmation that it has been successfully added.
+Invite the user **@inqode-bot** to your repository:
 
-### 2. Code Review
+- On GitHub: [https://github.com/inqode-bot](https://github.com/inqode-bot)
+- On GitLab: [https://gitlab.com/inqode-bot](https://gitlab.com/inqode-bot)
 
-Assign any **Merge Request** (GitLab) or **Pull Request** (GitHub) to the user **@inqode-bot**. After some time, the bot will post feedback directly onto the request.
+Wait for confirmation that it has been successfully added.
 
-### 3. Code Contribution
+## Usage Instructions
 
-Assign an **issue** to the user **@inqode-bot** and wait for it to contribute a **Merge Request** (GitLab) or **Pull Request** (GitHub). You can then:
+### Code Review
+
+Assign **@inqode-bot** as a **Reviewer** to any Merge Request (GitLab) or Pull Request (GitHub). After some time, the bot will post feedback directly onto the request.
+
+### Resolving an Issue
+
+Assign an **issue** to the user **@inqode-bot**. The bot will then create a Merge Request (GitLab) or Pull Request (GitHub) itself to resolve the issue.
+
+### Taking over a Pull Request
+
+Assign **@inqode-bot** as the **Assignee** to an existing Merge Request or Pull Request. The bot will then start fixing code issues (e.g. a failing pipeline) by itself.
+
+You can then:
 
 - Comment on the changes to request modifications.
 - Reassign the **@inqode-bot** to the same MR/PR to give it another go with your feedback in context.
-
----
 
 ## Advanced Topics
 
