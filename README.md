@@ -1,4 +1,5 @@
 # inqode-bot
+
 inqode-bot is an AI-powered assistant that integrates into your development workflow on GitHub and GitLab. It helps with code review, code contribution, and automated fixes, acting as an active team member. The bot can review your merge requests and pull requests, contribute code to resolve issues, and fix problems like failing pipelines — all by being assigned to the relevant items.
 
 inqode-bot is designed to be incorporated into your projects like any other active contributor. Simply interact with it through standard GitHub/GitLab workflows, and it will respond accordingly.
@@ -9,9 +10,9 @@ We highly recommend to always have a human in control of the decision of what co
 
 ## Setup
 
-Invite the user [inqode-bot on GitHub](https://github.com/inqode-bot) or [inqode-bot on GitLab](https://gitlab.com/inqode-bot) to your repository and wait for confirmation that it has been successfully added.
+Invite the user [@inqode-bot on GitHub](https://github.com/inqode-bot) or [@inqode-bot on GitLab](https://gitlab.com/inqode-bot) to your repository and wait for confirmation that it has been successfully added.
 
-On GitHub, it is recommended to give the bot write access if it should contribute code. On GitLab, it is recommended to give the bot a "Developer" role.
+On GitHub, it is recommended to give the bot write access if it should contribute code. On GitLab, it is recommended to give the bot a Developer role.
 
 ## Usage Instructions
 
