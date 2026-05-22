@@ -1,12 +1,12 @@
-# inqode-bot
+# @inqode-bot
 
-inqode-bot is an AI-powered assistant that integrates into your development workflow on GitHub and GitLab. It helps with code review, code contribution, and automated fixes, acting as an active team member. @inqode-bot can review your merge requests and pull requests, contribute code to resolve issues, and fix problems like failing pipelines. It can be assigned to the relevant items to get started.
+@inqode-bot is an AI-powered assistant that integrates into your development workflow on GitHub and GitLab. It helps with code review, code contribution, and automated fixes, acting as an active team member. @inqode-bot can review merge requests and pull requests, contribute code to resolve issues, and fix problems like failing pipelines. It can be assigned to the relevant items to get started.
 
-inqode-bot is designed to be incorporated into your projects like any other active contributor. Simply interact with it through standard GitHub or GitLab workflows, and it will respond accordingly.
+@inqode-bot is designed to be incorporated into your projects like any other active contributor. Simply interact with it through standard GitHub or GitLab workflows, and it will respond accordingly.
 
-> **Note:** @inqode-bot is limited to the capabilities of the underlying LLM and may need a little bit more context than an experienced human contributor, especially when dealing with complex or domain-specific codebases. Feel free to provide additional details in comments or issue descriptions to help produce better results.
+Note: @inqode-bot is limited to the capabilities of the underlying LLM and may need a little bit more context than an experienced human contributor, especially when dealing with complex or domain-specific codebases. Feel free to provide additional details in comments or issue descriptions to help produce better results.
 
-We highly recommend to always have a human in control of the decision of what code should be part of the code base. @inqode-bot is meant to be used as an assistant, not as an autonomous decision maker.
+We recommend always having a human in control of the decision about what code should be part of the codebase. @inqode-bot is meant to be used as an assistant, not as an autonomous decision maker.
 
 ## Setup
 
@@ -21,7 +21,7 @@ On GitHub, it is recommended to give @inqode-bot write access if it should contr
 
 ## Working Environment
 
-The bot operates within a containerized environment based on the [default Docker image](https://gitlab.com/inqode/docker-images/-/blob/main/default.dockerfile?ref_type=heads). This environment includes support for the following tools and languages:
+@inqode-bot operates within a containerized environment based on the [default Docker image](https://gitlab.com/inqode/docker-images/-/blob/main/default.dockerfile?ref_type=heads). This environment includes support for the following tools and languages:
 
 | Category | Tools |
 |---|---|
@@ -30,11 +30,11 @@ The bot operates within a containerized environment based on the [default Docker
 | Container & Kubernetes tools | helm, kubectl, kustomize, umoci, skopeo |
 | Utilities | git, jq, bash |
 
-*Note: This list is not exhaustive.*
+This list is not exhaustive.
 
-This setup enables the bot to handle a wide variety of codebases and development tasks.
+@inqode-bot can handle a wide variety of codebases and development tasks.
 
-> **Note:** The Docker image is open for contributions. We welcome pull requests to the [docker-images project](https://gitlab.com/inqode/docker-images) to suggest improvements or additional tools.
+Note: The Docker image is open for contributions. We welcome pull requests to the [docker-images project](https://gitlab.com/inqode/docker-images) to suggest improvements or additional tools.
 
 ## Usage Instructions
 
@@ -54,18 +54,15 @@ You can comment on the changes to request modifications. After reviewing the upd
 
 ### How @inqode-bot Handles Comments
 
-When you leave comments on code in a Pull Request or Merge Request, @inqode-bot sees these comments when it reviews the changes. Even if you resolve (dismiss) comments after discussing them, the bot still retains the information about those comments in subsequent runs.
+When you leave comments on code in a Pull Request or Merge Request, @inqode-bot sees these comments when it reviews the changes. Even if you resolve (dismiss) comments after discussing them, @inqode-bot still retains the information about those comments in subsequent runs.
 
-This means:
-- The bot can reference resolved comments when making updates or explaining its reasoning
-- You don't need to re-explain issues that have already been resolved. The bot remembers them
-- If you want to remove a comment from the bot's context, you'll need to delete it entirely
+@inqode-bot can reference resolved comments when making updates or explaining its reasoning. You do not need to re-explain issues that have already been resolved. @inqode-bot remembers them. If you want to remove a comment from the context, you must delete it entirely.
 
-This behavior allows the bot to maintain context throughout a discussion, making it easier to track the evolution of feedback and changes over multiple review cycles.
+This behavior allows @inqode-bot to maintain context throughout a discussion, making it easier to track the evolution of feedback and changes over multiple review cycles.
 
 ## Advanced Topics
 
-### Improving @inqode-bot's Output with Testing and Linting
+### Improving Output with Testing and Linting
 
 The quality of code produced by @inqode-bot is significantly higher when your project has testing and linting configured. @inqode-bot uses these tools to verify its changes before committing, which helps catch issues that the LLM might miss.
 
@@ -79,9 +76,9 @@ CI Pipeline: Ensure your tests and linting are part of your CI pipeline. This pr
 
 If your project already has tests and linting, @inqode-bot can use these tools to self-validate its changes. This results in higher quality code submissions that are more likely to pass review on the first attempt.
 
-### Fine-Tuning @inqode-bot with `inqode-bot.yaml`
+### Fine-Tuning with `inqode-bot.yaml`
 
-You can customize the behavior of @inqode-bot by creating a configuration file called `inqode-bot.yaml` in the root of your project. This file allows you to fine-tune how the bot responds to different tasks by providing custom prompts and instructions.
+You can customize the behavior of @inqode-bot by creating a configuration file called `inqode-bot.yaml` in the root of your project. This file allows you to fine-tune how @inqode-bot responds to different tasks by providing custom prompts and instructions.
 
 #### Configuration File
 
@@ -96,6 +93,3 @@ prompts:
     - run `cargo fmt` to format the code
     - run `cargo clippy` to check for linting issues
 ```
-
-
-
