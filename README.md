@@ -47,10 +47,12 @@ Drop a file called `inqode-bot.yaml` into the root directory of your project wit
 
 ```yaml
 prompts:
+  code_review: |-
+    - Do not consider code formatting as part of the review process.
   work_on_merge_request: |-
-    - Run `cargo test` and fix failures.
-    - Run `cargo fmt` to format the code.
-    - Run `cargo clippy` to check for linting issues.
+    - run `cargo test` and fix failures
+    - run `cargo fmt` to format the code
+    - run `cargo clippy` to check for linting issues
 ```
 
 
