@@ -48,16 +48,10 @@ Drop a file called `inqode-bot.yaml` into the root directory of your project wit
 ```yaml
 prompts:
   work_on_merge_request: |-
-    - Run `cargo test` and fix failures. Run `cargo fmt` to format the code. Run `cargo clippy` to check for linting issues.
+    - Run `cargo test` and fix failures.
+    - Run `cargo fmt` to format the code.
+    - Run `cargo clippy` to check for linting issues.
 ```
-
-#### Available Configuration Options
-
-The YAML file supports the following prompt categories:
-
-- code_review: Customize how @inqode-bot performs code reviews. Add instructions or preferences for the review process.
-
-- work_on_merge_request: Customize how @inqode-bot works on merge requests. Add specific commands, testing requirements, or coding standards the bot should follow.
 
 
 

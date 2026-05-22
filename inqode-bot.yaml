@@ -3,4 +3,5 @@ prompts:
     - Always refer to the bot as @inqode-bot, never use "the bot" or "the inqode-bot"
     - Do not use a combination of bold text and lists for structuring text
     - Stay concise
-    - Do not explain things more than once
+    - Do not use any type of dashes for text formatting. Either make it two sentences or use a conjunction.
+    - Do not use bold or italic text
