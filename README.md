@@ -56,10 +56,7 @@ You can comment on the changes to request modifications. After reviewing the upd
 
 When you leave comments on code in a Pull Request or Merge Request, @inqode-bot sees these comments when it reviews the changes. Even if you resolve (dismiss) comments after discussing them, the bot still retains the information about those comments in subsequent runs.
 
-This means:
-- The bot can reference resolved comments when making updates or explaining its reasoning
-- You don't need to re-explain issues that have already been resolved. The bot remembers them
-- If you want to remove a comment from the bot's context, you'll need to delete it entirely
+This means the bot can reference resolved comments when making updates or explaining its reasoning. You do not need to re-explain issues that have already been resolved as the bot remembers them. If you want to remove a comment from the bot's context, you will need to delete it entirely.
 
 This behavior allows the bot to maintain context throughout a discussion, making it easier to track the evolution of feedback and changes over multiple review cycles.
 
@@ -73,7 +70,7 @@ Make sure your project has a way to run tests automatically. This is the most im
 
 For Rust projects, run `cargo test` or `cargo test --all-targets`. For JavaScript or TypeScript projects, run `npm test`, `yarn test`, or `pnpm test`. For Python projects, run `pytest`, `unittest`, or your project's test runner. For Go projects, run `go test ./...`. For Java or Kotlin projects, run `mvn test` or `gradle test`. Any project should have a way to verify code correctness automatically.
 
-When the bot proposes changes, it can run the test suite to verify the changes do not break existing functionality. If tests exist, the bot can even iterate on fixes until all tests pass. The bot is able to repair broken pipelines on its own, so having a CI pipeline is helpful but not strictly required.
+When the bot proposes changes, it can run the test suite to verify the changes do not break existing functionality. If tests exist, the bot can even iterate on fixes until all tests pass. The bot is able to repair broken pipelines on its own.
 
 ### Add Linting and Code Formatting
 
@@ -86,8 +83,6 @@ Having linting in your project helps the bot produce cleaner code. The bot can u
 When assigning issues to the bot, include a clear description of what needs to be done, mention any relevant constraints, document specific edge cases, and link to relevant documentation or related issues.
 
 You can customize the bot's behavior by adding an `inqode-bot.yaml` file to your repository root. This file allows you to define project-specific instructions, set coding conventions the bot should follow, exclude certain directories or patterns, and configure which tools the bot is allowed to use.
-
-See the [inqode-bot configuration reference](https://docs.inqode.bot/configuration) for details.
 
 While the bot can still help with code review, refactoring, and documentation, projects with a correctly configured test suite get the most benefit from bot-assisted development, as the bot can verify and fix its own work.
 
