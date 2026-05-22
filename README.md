@@ -47,10 +47,8 @@ Drop a file called `inqode-bot.yaml` into the root directory of your project wit
 
 ```yaml
 prompts:
-  code_review: |-
-    Do not consider code formatting as part of the review process.
   work_on_merge_request: |-
-    Run cargo test and fix any failures. Run cargo fmt to format the code. Run cargo clippy to check for linting issues. Do not use dashes for structuring sentences. Use two sentences or the appropriate conjunction instead. Do not use bold or italic text. Do not use emojis.
+    - Run `cargo test` and fix failures. Run `cargo fmt` to format the code. Run `cargo clippy` to check for linting issues.
 ```
 
 #### Available Configuration Options
@@ -61,15 +59,5 @@ The YAML file supports the following prompt categories:
 
 - work_on_merge_request: Customize how @inqode-bot works on merge requests. Add specific commands, testing requirements, or coding standards the bot should follow.
 
-#### Example Configuration
 
-The example above shows:
-For code reviews, instructing the bot to ignore formatting concerns. For work on merge requests, specifying that the bot should run tests, format code, check for linting issues, follow specific formatting guidelines for instructions, and avoid using bold or italic text or emojis.
-
-#### Notes
-
-- You can add or modify the prompt instructions as needed for your project
-- The YAML format must be preserved (do not change the key structure)
-- Changes to `inqode-bot.yaml` take effect on the next interaction with the bot
-- Each prompt accepts a list of instructions that will be included in the bot's context
 

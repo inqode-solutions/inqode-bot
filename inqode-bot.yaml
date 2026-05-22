@@ -1,5 +1,6 @@
 prompts:
-  code_review: |-
-    Do not consider code formatting as part of the review process.
   work_on_merge_request: |-
-    Run cargo test and fix any failures. Run cargo fmt to format the code. Run cargo clippy to check for linting issues. Do not use dashes for structuring sentences. Use two sentences or the appropriate conjunction instead. Do not use bold or italic text. Do not use emojis.
+    - Always refer to the bot as @inqode-bot, never use "the bot" or "the inqode-bot"
+    - Do not use a combination of bold text and lists for structuring text
+    - Stay concise
+    - Do not explain things more than once
