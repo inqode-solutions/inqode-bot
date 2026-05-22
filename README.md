@@ -35,6 +35,17 @@ Taking over an existing pull request: Assign @inqode-bot as the Assignee to an e
 
 You can comment on the changes to request modifications. After reviewing the updates, reassign @inqode-bot to the same MR or PR to give it another attempt with your feedback in context.
 
+### How @inqode-bot Handles Comments
+
+When you leave comments on code in a Pull Request or Merge Request, @inqode-bot sees these comments when it reviews the changes. Even if you resolve (dismiss) comments after discussing them, the bot still retains the information about those comments in subsequent runs.
+
+This means:
+- The bot can reference resolved comments when making updates or explaining its reasoning
+- You don't need to re-explain issues that have already been resolved - the bot remembers them
+- If you want to remove a comment from the bot's context, you'll need to delete it entirely
+
+This behavior allows the bot to maintain context throughout a discussion, making it easier to track the evolution of feedback and changes over multiple review cycles.
+
 ## Advanced Topics
 
 - TODO: How can I utilize `inqode-bot.yaml` to configure @inqode-bot?
