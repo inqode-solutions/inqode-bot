@@ -65,4 +65,23 @@ This behavior allows the bot to maintain context throughout a discussion, making
 
 ## Advanced Topics
 
-- TODO: How can I utilize `inqode-bot.yaml` to configure @inqode-bot?
+### Fine-Tuning @inqode-bot with `inqode-bot.yaml`
+
+You can customize the behavior of @inqode-bot by creating a configuration file called `inqode-bot.yaml` in the root of your project. This file allows you to fine-tune how the bot responds to different tasks by providing custom prompts and instructions.
+
+#### Configuration File
+
+Drop a file called `inqode-bot.yaml` into the root directory of your project with the following structure:
+
+```yaml
+prompts:
+  code_review: |-
+    - Do not consider code formatting as part of the review process.
+  work_on_merge_request: |-
+    - run `cargo test` and fix failures
+    - run `cargo fmt` to format the code
+    - run `cargo clippy` to check for linting issues
+```
+
+
+
