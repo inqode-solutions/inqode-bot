@@ -23,10 +23,14 @@ On GitHub, it is recommended to give @inqode-bot write access if it should contr
 
 The bot operates within a containerized environment based on the [default Docker image](https://gitlab.com/inqode/docker-images/-/blob/main/default.dockerfile?ref_type=heads). This environment includes support for the following tools and languages:
 
-- **Programming languages**: Node.js, Python, Ruby, Go, Rust, Java (OpenJDK 17)
-- **Package managers**: npm, yarn, pnpm, pip
-- **Container & Kubernetes tools**: helm, kubectl, kustomize, umoci, skopeo
-- **Utilities**: git, openssh-client, jq, bash
+| Category | Tools |
+|---|---|
+| Programming languages | Node.js, Python, Ruby, Go, Rust, Java (OpenJDK 17) |
+| Package managers | npm, yarn, pnpm (Node.js), bundler (Ruby), pip (Python), maven, gradle (Java) |
+| Container & Kubernetes tools | helm, kubectl, kustomize, umoci, skopeo |
+| Utilities | git, jq, bash |
+
+*Note: This list is not exhaustive.*
 
 This setup enables the bot to handle a wide variety of codebases and development tasks.
 
