@@ -65,6 +65,20 @@ This behavior allows the bot to maintain context throughout a discussion, making
 
 ## Advanced Topics
 
+### Improving @inqode-bot's Output with Testing and Linting
+
+The quality of code produced by @inqode-bot is significantly higher when your project has testing and linting configured. @inqode-bot uses these tools to verify its changes before committing, which helps catch issues that the LLM might miss.
+
+To get the best results, set up the following in your project:
+
+Testing Framework: Configure a test runner that works with your language and framework. @inqode-bot will run tests to verify that changes do not break existing functionality.
+
+Linting Tool: Configure a linter for your codebase. @inqode-bot will run linting checks to identify style issues, potential bugs, and code quality problems.
+
+CI Pipeline: Ensure your tests and linting are part of your CI pipeline. This provides @inqode-bot with the same validation that runs on merge.
+
+If your project already has tests and linting, @inqode-bot can use these tools to self-validate its changes. This results in higher quality code submissions that are more likely to pass review on the first attempt.
+
 ### Fine-Tuning @inqode-bot with `inqode-bot.yaml`
 
 You can customize the behavior of @inqode-bot by creating a configuration file called `inqode-bot.yaml` in the root of your project. This file allows you to fine-tune how the bot responds to different tasks by providing custom prompts and instructions.
