@@ -85,6 +85,7 @@ You can customize the behavior of @inqode-bot by creating a configuration file c
 Drop a file called `inqode-bot.yaml` into the root directory of your project with the following structure:
 
 ```yaml
+ignore: []
 prompts:
   code_review: |-
     - Do not consider code formatting as part of the review process.
@@ -92,4 +93,70 @@ prompts:
     - run `cargo test` and fix failures
     - run `cargo fmt` to format the code
     - run `cargo clippy` to check for linting issues
+tools:
+  cargo_build: false
+```
+
+#### Configuration Options
+
+**ignore**
+
+A list of files and directories to ignore during operations. @inqode-bot will skip these paths when scanning the repository. Use relative paths from the project root.
+
+```yaml
+ignore:
+  - node_modules
+  - vendor
+  - dist
+  - .git
+  - build
+```
+
+**ssh_user**
+
+The SSH user used for repository access. Set this if @inqode-bot needs to access private repositories over SSH.
+
+```yaml
+ssh_user: my-ssh-user
+```
+
+**prompts**
+
+Custom prompt configurations to modify how @inqode-bot behaves during different operations.
+
+`code_review`
+
+Custom instructions appended to the code review prompt. Use this to define review guidelines specific to your project.
+
+```yaml
+prompts:
+  code_review: |-
+    - Ensure all functions have proper error handling.
+    - Check for potential security vulnerabilities.
+    - Verify that all public APIs have documentation.
+```
+
+`work_on_merge_request`
+
+Custom instructions appended to the work-on-merge-request prompt. Use this to specify tasks or constraints when @inqode-bot works on code changes.
+
+```yaml
+prompts:
+  work_on_merge_request: |-
+    - Run `cargo test` and fix failures.
+    - Run `cargo fmt` to format the code.
+    - Run `cargo clippy` to check for linting issues.
+```
+
+**tools**
+
+Tool configurations that control which build tools @inqode-bot uses during operations.
+
+`cargo_build`
+
+A boolean value that determines whether @inqode-bot runs `cargo build` during operations. When enabled, @inqode-bot will compile the project to verify that changes are valid. The default value is `false`.
+
+```yaml
+tools:
+  cargo_build: true
 ```
