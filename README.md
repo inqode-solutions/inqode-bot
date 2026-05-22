@@ -56,36 +56,32 @@ You can comment on the changes to request modifications. After reviewing the upd
 
 When you leave comments on code in a Pull Request or Merge Request, @inqode-bot sees these comments when it reviews the changes. Even if you resolve (dismiss) comments after discussing them, the bot still retains the information about those comments in subsequent runs.
 
-This means the bot can reference resolved comments when making updates or explaining its reasoning. You do not need to re-explain issues that have already been resolved as the bot remembers them. If you want to remove a comment from the bot's context, you will need to delete it entirely.
+This means:
+- The bot can reference resolved comments when making updates or explaining its reasoning
+- You don't need to re-explain issues that have already been resolved. The bot remembers them
+- If you want to remove a comment from the bot's context, you'll need to delete it entirely
 
 This behavior allows the bot to maintain context throughout a discussion, making it easier to track the evolution of feedback and changes over multiple review cycles.
 
-## Project Setup for Better Results
-
-The quality of code changes the bot produces is significantly improved when your project has a test suite configured correctly. This gives the bot something concrete to validate its changes against, and allows it to fix its own mistakes before committing code.
-
-### Essential Setup
-
-Make sure your project has a way to run tests automatically. This is the most important setup step.
-
-For Rust projects, run `cargo test` or `cargo test --all-targets`. For JavaScript or TypeScript projects, run `npm test`, `yarn test`, or `pnpm test`. For Python projects, run `pytest`, `unittest`, or your project's test runner. For Go projects, run `go test ./...`. For Java or Kotlin projects, run `mvn test` or `gradle test`. Any project should have a way to verify code correctness automatically.
-
-When the bot proposes changes, it can run the test suite to verify the changes do not break existing functionality. If tests exist, the bot can even iterate on fixes until all tests pass. The bot is able to repair broken pipelines on its own.
-
-### Add Linting and Code Formatting
-
-Configure linting and formatting tools to improve code quality. For Rust, use `cargo clippy` and `cargo fmt`. For JavaScript or TypeScript, use `eslint` and `prettier`. For Python, use `flake8`, `pylint`, and `black`. For Go, use `golangci-lint` and `go fmt`.
-
-Having linting in your project helps the bot produce cleaner code. The bot can use linting output to fix style issues and improve code quality.
-
-### Provide Clear Issue Descriptions and Configuration
-
-When assigning issues to the bot, include a clear description of what needs to be done, mention any relevant constraints, document specific edge cases, and link to relevant documentation or related issues.
-
-You can customize the bot's behavior by adding an `inqode-bot.yaml` file to your repository root. This file allows you to define project-specific instructions, set coding conventions the bot should follow, exclude certain directories or patterns, and configure which tools the bot is allowed to use.
-
-While the bot can still help with code review, refactoring, and documentation, projects with a correctly configured test suite get the most benefit from bot-assisted development, as the bot can verify and fix its own work.
-
 ## Advanced Topics
 
-- TODO: How can I utilize `inqode-bot.yaml` to configure @inqode-bot?
+### Fine-Tuning @inqode-bot with `inqode-bot.yaml`
+
+You can customize the behavior of @inqode-bot by creating a configuration file called `inqode-bot.yaml` in the root of your project. This file allows you to fine-tune how the bot responds to different tasks by providing custom prompts and instructions.
+
+#### Configuration File
+
+Drop a file called `inqode-bot.yaml` into the root directory of your project with the following structure:
+
+```yaml
+prompts:
+  code_review: |-
+    - Do not consider code formatting as part of the review process.
+  work_on_merge_request: |-
+    - run `cargo test` and fix failures
+    - run `cargo fmt` to format the code
+    - run `cargo clippy` to check for linting issues
+```
+
+
+
