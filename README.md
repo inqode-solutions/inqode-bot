@@ -35,6 +35,106 @@ Taking over an existing pull request: Assign @inqode-bot as the Assignee to an e
 
 You can comment on the changes to request modifications. After reviewing the updates, reassign @inqode-bot to the same MR or PR to give it another attempt with your feedback in context.
 
-## Advanced Topics
+## Project Setup for Better Results
 
-- TODO: How can I utilize `inqode-bot.yaml` to configure @inqode-bot?
+The quality of code changes the bot produces is significantly improved when your project has automated tests and linting in place. This gives the bot something concrete to validate its changes against.
+
+### Essential Setup Steps
+
+#### 1. Ensure Automated Tests Run in CI
+
+Make sure your repository has a CI pipeline that runs tests:
+
+- **Rust projects**: Run `cargo test` or `cargo test --all-targets`
+- **JavaScript/TypeScript projects**: Run `npm test`, `yarn test`, or `pnpm test`
+- **Python projects**: Run `pytest`, `unittest`, or your project's test runner
+- **Go projects**: Run `go test ./...`
+- **Java/Kotlin projects**: Run `mvn test` or `gradle test`
+- **Any project**: Ensure there's a way to verify code correctness automatically
+
+> **Why this matters**: When the bot proposes changes, it can run the test suite to verify the changes don't break existing functionality. If tests exist, the bot can even iterate on fixes until all tests pass.
+
+#### 2. Add Linting and Code Formatting
+
+Configure linting and formatting tools:
+
+- **Rust**: `cargo clippy`, `cargo fmt`
+- **JavaScript/TypeScript**: `eslint`, `prettier`
+- **Python**: `flake8`, `pylint`, `black`
+- **Go**: `golangci-lint`, `go fmt`
+
+Ensure these are run in your CI pipeline. The bot can use linting output to fix style issues and improve code quality.
+
+#### 3. Keep CI Green
+
+Before assigning tasks to the bot, ensure your CI pipeline is currently passing. A green CI gives the bot a clean baseline to work from. If the CI is failing, consider fixing the root cause first, or provide the bot with context about which failures are expected.
+
+#### 4. Provide Clear Issue Descriptions
+
+When assigning issues to the bot:
+
+- Include a clear description of what needs to be done
+- Mention any relevant constraints (e.g., "must not change the public API")
+- If there are specific edge cases, document them
+- Link to relevant documentation or related issues
+
+#### 5. Use `inqode-bot.yaml` for Configuration
+
+You can customize the bot's behavior by adding an `inqode-bot.yaml` file to your repository root. This file allows you to:
+
+- Define project-specific instructions
+- Set coding conventions the bot should follow
+- Exclude certain directories or patterns
+- Configure which tools the bot is allowed to use
+
+See the [inqode-bot configuration reference](https://docs.inqode.bot/configuration) for details.
+
+### Recommended CI Configuration
+
+Here are examples of minimal CI configurations that work well with the bot:
+
+**GitHub Actions (GitHub)**
+```yaml
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run tests
+        run: |
+          # Replace with your project's test command
+          npm test  # or cargo test, pytest, etc.
+      - name: Run linter
+        run: |
+          # Replace with your project's lint command
+          npm run lint  # or cargo clippy, flake8, etc.
+```
+
+**GitLab CI (.gitlab-ci.yml)**
+```yaml
+test:
+  stage: test
+  script:
+    - |
+      # Replace with your project's test command
+      npm test  # or cargo test, pytest, etc.
+  lint:
+  stage: test
+  script:
+    - |
+      # Replace with your project's lint command
+      npm run lint  # or cargo clippy, flake8, etc.
+```
+
+### What Happens Without Tests?
+
+The bot can still work on projects without automated tests, but:
+
+- Changes are harder to verify as correct
+- The bot may need more explicit guidance on what's expected
+- It's harder for the bot to iterate and fix issues autonomously
+- Human review becomes even more critical
+
+While the bot can still help with code review, refactoring, and documentation, projects with automated tests get the most benefit from bot-assisted development.
