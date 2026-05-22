@@ -41,7 +41,7 @@ When you leave comments on code in a Pull Request or Merge Request, @inqode-bot 
 
 This means:
 - The bot can reference resolved comments when making updates or explaining its reasoning
-- You don't need to re-explain issues that have already been resolved - the bot remembers them
+- You don't need to re-explain issues that have already been resolved. The bot remembers them
 - If you want to remove a comment from the bot's context, you'll need to delete it entirely
 
 This behavior allows the bot to maintain context throughout a discussion, making it easier to track the evolution of feedback and changes over multiple review cycles.
