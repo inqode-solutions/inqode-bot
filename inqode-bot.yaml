@@ -1,0 +1,7 @@
+prompts:
+  code_review: |-
+    - Do not consider code formatting as part of the review process.
+  work_on_merge_request: |-
+    - run `cargo test` and fix failures
+    - run `cargo fmt` to format the code
+    - run `cargo clippy` to check for linting issues
