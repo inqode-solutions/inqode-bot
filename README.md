@@ -1,2 +1,40 @@
 # inqode-bot
-The AI-Powered version control companion
+
+inqode-bot is an AI-powered assistant that integrates into your development workflow on GitHub and GitLab. It helps with code review, code contribution, and automated fixes, acting as an active team member. @inqode-bot can review your merge requests and pull requests, contribute code to resolve issues, and fix problems like failing pipelines. It can be assigned to the relevant items to get started.
+
+inqode-bot is designed to be incorporated into your projects like any other active contributor. Simply interact with it through standard GitHub or GitLab workflows, and it will respond accordingly.
+
+> **Note:** @inqode-bot is limited to the capabilities of the underlying LLM and may need a little bit more context than an experienced human contributor, especially when dealing with complex or domain-specific codebases. Feel free to provide additional details in comments or issue descriptions to help produce better results.
+
+We highly recommend to always have a human in control of the decision of what code should be part of the code base. @inqode-bot is meant to be used as an assistant, not as an autonomous decision maker.
+
+## Setup
+
+Invite @inqode-bot to your repository:
+
+- [Invite @inqode-bot on GitHub](https://github.com/inqode-bot)
+- [Invite @inqode-bot on GitLab](https://gitlab.com/inqode-bot)
+
+Wait for confirmation that it has been successfully added.
+
+On GitHub, it is recommended to give @inqode-bot write access if it should contribute code. On GitLab, it is recommended to give @inqode-bot a Developer role.
+
+## Usage Instructions
+
+### Code Review
+
+Assign @inqode-bot as a Reviewer to any Merge Request (GitLab) or Pull Request (GitHub). @inqode-bot will analyze the changes and post feedback directly onto the request.
+
+### Code Contribution
+
+There are two ways to let @inqode-bot contribute code directly:
+
+Resolving an issue: Assign an issue to @inqode-bot. It will then create a Merge Request (GitLab) or Pull Request (GitHub) to resolve the issue.
+
+Taking over an existing pull request: Assign @inqode-bot as the Assignee to an existing Merge Request or Pull Request. It will then start fixing code issues, such as a failing pipeline, on its own.
+
+You can comment on the changes to request modifications. After reviewing the updates, reassign @inqode-bot to the same MR or PR to give it another attempt with your feedback in context.
+
+## Advanced Topics
+
+- TODO: How can I utilize `inqode-bot.yaml` to configure @inqode-bot?
