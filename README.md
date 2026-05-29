@@ -160,3 +160,9 @@ A boolean value that determines whether @inqode-bot runs `cargo build` during op
 tools:
   cargo_build: true
 ```
+
+## Privacy
+
+@inqode-bot pulls your code from a Kubernetes cluster hosted on dedicated servers in Germany. The code is processed by a self-hosted LLM running on an on-premises server, also located in Germany.
+
+Your code is only stored while @inqode-bot is actively working on it. We do not use your code for training or any other purposes. We do not share your code with any third party.
