@@ -26,7 +26,7 @@ On GitHub, it is recommended to give @inqode-bot write access if it should contr
 | Category | Tools |
 |---|---|
 | Programming languages | Node.js, Python, Ruby, Go, Rust, Java (OpenJDK 17) |
-| Package managers | npm, yarn, pnpm (Node.js), bundler (Ruby), pip (Python), maven, gradle (Java) |
+| Package managers | npm, yarn, pnpm (Node.js), bundler (Ruby), pip (Python), maven, gradle (Java), mise |
 | Container & Kubernetes tools | helm, kubectl, kustomize, umoci, skopeo |
 | Utilities | git, jq, bash |
 
