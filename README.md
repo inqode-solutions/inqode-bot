@@ -53,6 +53,10 @@ There are two ways to let @inqode-bot contribute code directly:
 
 Resolving an issue: Assign an issue to @inqode-bot. It will then create a Merge Request (GitLab) or Pull Request (GitHub) to resolve the issue.
 
+![Assign issue on GitHub](./assets/assign-issue-github.webp)
+
+![Assign issue on GitLab](./assets/assign-issue-gitlab.webp)
+
 Taking over an existing pull request: Assign @inqode-bot as the Assignee to an existing Merge Request or Pull Request. It will then start fixing code issues, such as a failing pipeline, on its own.
 
 You can comment on the changes to request modifications. After reviewing the updates, reassign @inqode-bot to the same MR or PR to give it another attempt with your feedback in context.
