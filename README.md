@@ -10,10 +10,15 @@ We recommend always having a human in control of the decision about what code sh
 
 ## Setup
 
-Invite @inqode-bot to your repository:
+Invite @inqode-bot to your repository
 
-- [Invite @inqode-bot on GitHub](https://github.com/inqode-bot)
-- [Invite @inqode-bot on GitLab](https://gitlab.com/inqode-bot)
+### [Invite @inqode-bot on GitHub](https://github.com/inqode-bot)
+
+![Invite on GitHub](./assets/invite-github.webp)
+
+### [Invite @inqode-bot on GitLab](https://gitlab.com/inqode-bot)
+
+![Invite on GitLab](./assets/invite-gitlab.webp)
 
 Wait for confirmation that it has been successfully added.
 
