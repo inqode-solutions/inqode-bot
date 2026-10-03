@@ -24,6 +24,10 @@ Wait for confirmation that it has been successfully added.
 
 On GitHub, it is recommended to give @inqode-bot write access if it should contribute code. On GitLab, it is recommended to give @inqode-bot a Developer role.
 
+### Self-hosted GitLab and Forgejo instances
+
+@inqode-bot can also be used with self-hosted GitLab and Forgejo instances. This requires some manual configuration on our side. If you want to give it a try, reach out to us via https://inqode.solutions/inqode-bot.
+
 ## Working Environment
 
 @inqode-bot operates within a containerized environment based on the [default Docker image](https://gitlab.com/inqode/docker-images/-/blob/main/default.dockerfile?ref_type=heads). This environment includes support for the following tools and languages:
